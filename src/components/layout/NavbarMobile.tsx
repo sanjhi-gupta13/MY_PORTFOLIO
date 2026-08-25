@@ -102,23 +102,6 @@ export const NavbarMobile: React.FC<NavbarMobileProps> = ({
             })}
 
             <div className="pt-2 border-t border-white/10 mt-2">
-              <button
-                onClick={() => {
-                  setIsAdminView(true);
-                  setIsOpen(false);
-                }}
-                className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-semibold ${
-                  isAdminView
-                    ? 'bg-brand-purple text-white'
-                    : 'bg-white/5 text-slate-300 hover:bg-brand-purple/20'
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-brand-purple" />
-                  Admin Portal
-                </span>
-                <span className="font-mono text-[10px] opacity-70">/admin</span>
-              </button>
             </div>
           </nav>
         </div>

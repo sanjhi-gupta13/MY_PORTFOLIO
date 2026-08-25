@@ -9,8 +9,8 @@ interface AdminLoginProps {
 
 export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToPortfolio }) => {
   const { loginAdmin, addToast } = useData();
-  const [email, setEmail] = useState('admin@sanjhi.dev');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -69,7 +69,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToPortfolio }) => 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-2xl glass-input text-sm font-semibold"
-                placeholder="admin@sanjhi.dev"
+                placeholder="you@example.com"
               />
             </div>
           </div>

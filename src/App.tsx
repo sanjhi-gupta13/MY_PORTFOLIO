@@ -21,14 +21,23 @@ const MainLayout: React.FC = () => {
   });
 
   useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === '#admin' || window.location.pathname === '/admin') {
-        setIsAdminView(true);
-      }
+    const handleUrlChange = () => {
+      setIsAdminView(window.location.pathname === '/admin' || window.location.hash === '#admin');
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    window.addEventListener('popstate', handleUrlChange);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlChange);
+      window.removeEventListener('popstate', handleUrlChange);
+    };
   }, []);
+
+  const handleBackToPortfolio = () => {
+    if (window.location.pathname === '/admin' || window.location.hash === '#admin') {
+      window.history.pushState({}, '', '/');
+    }
+    setIsAdminView(false);
+  };
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-900 flex flex-col lg:flex-row relative selection:bg-indigo-600 selection:text-white">
@@ -47,9 +56,9 @@ const MainLayout: React.FC = () => {
           
           {isAdminView ? (
             isAuthenticated ? (
-              <AdminDashboard onBackToPortfolio={() => setIsAdminView(false)} />
+              <AdminDashboard onBackToPortfolio={handleBackToPortfolio} />
             ) : (
-              <AdminLogin onBackToPortfolio={() => setIsAdminView(false)} />
+              <AdminLogin onBackToPortfolio={handleBackToPortfolio} />
             )
           ) : (
             <>
@@ -66,17 +75,10 @@ const MainLayout: React.FC = () => {
               <footer className="mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-600 pb-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-slate-900 font-mono">{profile.name || 'Sanjhi Gupta'}</span>
-                  <span>— Developer Portfolio & Management Portal</span>
+                  <span>— Developer Portfolio</span>
                 </div>
 
                 <div className="flex items-center gap-4 font-mono text-[11px]">
-                  <button
-                    onClick={() => setIsAdminView(true)}
-                    className="hover:text-indigo-600 transition-colors font-bold text-slate-700"
-                  >
-                    Admin Portal (/admin)
-                  </button>
-                  <span>•</span>
                   <a href="#overview" className="hover:text-slate-900 transition-colors font-bold text-slate-700">
                     Back to Top ↑
                   </a>

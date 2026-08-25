@@ -73,7 +73,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToPortfoli
               <Sparkles className="w-4 h-4 text-indigo-600" />
             </h2>
             <p className="text-xs text-slate-600 font-mono font-medium">
-              Authenticated as: <span className="text-indigo-600 font-bold">{userEmail || 'admin@sanjhi.dev'}</span>
+              Authenticated as: <span className="text-indigo-600 font-bold">{userEmail || 'Admin User'}</span>
             </p>
           </div>
         </div>

@@ -100,24 +100,14 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         {/* Bottom Profile User Card matching Kan3an .Dev */}
         <div className="pt-6 border-t border-white/20 space-y-4">
           
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 border border-white/40 text-white font-bold flex items-center justify-center text-xs">
-                SG
-              </div>
-              <div className="text-left">
-                <p className="font-bold text-white text-xs leading-tight">{profile.name || 'Sanjhi Gupta'}</p>
-                <p className="text-[11px] text-indigo-100 font-semibold leading-tight">Full Stack Developer</p>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-white/20 border border-white/40 text-white font-bold flex items-center justify-center text-xs">
+              SG
             </div>
-
-            <button
-              onClick={() => setIsAdminView(true)}
-              className="p-2 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
-              title="Admin Portal"
-            >
-              <Lock className="w-4 h-4" />
-            </button>
+            <div className="text-left">
+              <p className="font-bold text-white text-xs leading-tight">{profile.name || 'Sanjhi Gupta'}</p>
+              <p className="text-[11px] text-indigo-100 font-semibold leading-tight">Full Stack Developer</p>
+            </div>
           </div>
 
         </div>
@@ -139,14 +129,6 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           </button>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setIsAdminView(true)}
-              className="p-2 rounded-xl bg-white/20 text-white"
-              title="Admin Portal"
-            >
-              <Lock className="w-4 h-4" />
-            </button>
-
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 rounded-xl bg-white/20 text-white"

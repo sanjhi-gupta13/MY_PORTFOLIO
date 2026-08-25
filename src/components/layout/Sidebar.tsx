@@ -95,21 +95,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Bottom Profile Footer & Admin Link */}
         <div className="pt-4 border-t border-white/10 space-y-3">
-          <button
-            onClick={() => setIsAdminView(true)}
-            className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-semibold transition-all ${
-              isAdminView
-                ? 'bg-brand-purple text-white shadow-glow-purple'
-                : 'bg-white/5 text-slate-300 hover:bg-brand-purple/20 hover:text-brand-purple border border-white/10'
-            }`}
-          >
-            <span className="flex items-center gap-2">
-              <Lock className="w-3.5 h-3.5" />
-              Admin Portal
-            </span>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-black/40 font-mono">/admin</span>
-          </button>
-
           <div className="flex items-center justify-between px-2 pt-1">
             <div className="flex items-center gap-2">
               <a
