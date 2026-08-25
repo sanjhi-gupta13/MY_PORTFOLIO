@@ -1,7 +1,8 @@
 # 🌟 Sanjhi Gupta - Personal Portfolio & Admin Dashboard
 
-A modern, responsive, and dynamic personal portfolio web application built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Supabase**.
+A modern, responsive, and dynamic personal portfolio web application built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Supabase**, deployed on **Vercel**.
 
+![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 ![Portfolio Preview](https://img.shields.io/badge/Status-Active-brightgreen)
 ![React](https://img.shields.io/badge/React-18.3-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)
@@ -34,6 +35,14 @@ A modern, responsive, and dynamic personal portfolio web application built with 
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/), [PostCSS](https://postcss.org/), [Autoprefixer](https://github.com/postcss/autoprefixer)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Backend / Database**: [Supabase](https://supabase.com/) (PostgreSQL with RLS & Realtime capability)
+- **Hosting & Deployment**: [Vercel](https://vercel.com/) (Continuous Deployment linked to `main` branch)
+
+---
+
+## 🌐 Deployment
+
+This application is deployed on **Vercel** with automatic deployment enabled. Any updates pushed to the `main` branch trigger a production build on Vercel.
+
 
 ---
 
